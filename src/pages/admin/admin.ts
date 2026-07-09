@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-root',
-    templateUrl: './admin.template.html',
+    templateUrl: './admin.html',
 
 })
 export class AdminPage {

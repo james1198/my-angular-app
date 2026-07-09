@@ -1,0 +1,40 @@
+    <label>
+    Name
+    <input type="text" formControlName="name" />
+  </label>
+
+  @if (form.get('name')?.invalid && (form.get('name')?.touched || form.get('name')?.dirty)) {
+    <div class="error">
+      @if (form.get('name')?.errors?.['required']) {
+        <div>Name is required.</div>
+      }
+      @if (form.get('name')?.errors?.['minlength']) {
+        <div>Name must be at least 3 characters long.</div>
+      }
+    </div>
+  }
+
+  <label>
+    Email
+    <input type="email" formControlName="email" />
+  </label>
+
+  @if (form.get('email')?.invalid && (form.get('email')?.touched || form.get('email')?.dirty)) {
+    <div class="error">
+      @if (form.get('email')?.errors?.['required']) {
+        <div>Email is required.</div>
+      }
+      @if (form.get('email')?.errors?.['email']) {
+        <div>Enter a valid email address.</div>
+      }
+    </div>
+  }
+
+  <label>
+    Password
+    <input type="password" formControlName="password" />
+  </label>
+
+  <button type="submit" [disabled]="form.invalid">
+    Sign in
+  </button>
